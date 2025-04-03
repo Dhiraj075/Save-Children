@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make a Donation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #444;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .radio-group {
+            display: flex;
+            gap: 20px;
+        }
+        .radio-option {
+            display: flex;
+            align-items: center;
+        }
+        .radio-option input {
+            width: auto;
+            margin-right: 8px;
+        }
+        button {
+            background-color: #e41e26;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #c51920;
+        }
+        .donation-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .donation-amount {
+            border: 1px solid #ddd;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            flex-grow: 1;
+        }
+        .donation-amount:hover, .donation-amount.selected {
+            background-color: #f0f0f0;
+            border-color: #999;
+        }
+        #custom-amount-container {
+            display: none;
+            margin-top: 10px;
+        }
+        #custom-amount-container.visible {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Make a Donation</h1>
+    <p>Your generosity helps provide essential services to children in need around the world. Thank you for your support!</p>
+
+    <form id="donationForm">
+        <div class="form-group">
+            <label>Select Donation Amount</label>
+            <div class="donation-options">
+                <div class="donation-amount" data-amount="25">$25</div>
+                <div class="donation-amount" data-amount="50">$50</div>
+                <div class="donation-amount" data-amount="100">$100</div>
+                <div class="donation-amount" data-amount="250">$250</div>
+                <div class="donation-amount" data-amount="custom">Other</div>
+            </div>
+            <div id="custom-amount-container">
+                <label for="custom-amount">Enter Custom Amount ($)</label>
+                <input type="number" id="custom-amount" min="1" step="1" placeholder="Enter amount">
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>Donation Frequency</label>
+            <div class="radio-group">
+                <div class="radio-option">
+                    <input type="radio" id="one-time" name="frequency" value="one-time" checked>
+                    <label for="one-time">One-time</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="monthly" name="frequency" value="monthly">
+                    <label for="monthly">Monthly</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="payment-method">Payment Method</label>
+            <select id="payment-method" required>
+                <option value="">Select a payment method</option>
+                <option value="credit-card">Credit Card</option>
+                <option value="paypal">PayPal</option>
+                <option value="bank-transfer">Bank Transfer</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <div class="radio-option">
+                <input type="checkbox" id="newsletter" name="newsletter" checked>
+                <label for="newsletter">Subscribe to our newsletter</label>
+            </div>
+        </div>
+
+        <button type="submit">Donate Now</button>
+    </form>
+
+    <script>
+        // Handle donation amount selection
+        const donationAmounts = document.querySelectorAll('.donation-amount');
+        const customAmountContainer = document.getElementById('custom-amount-container');
+        
+        donationAmounts.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove selected class from all buttons
+                donationAmounts.forEach(btn => btn.classList.remove('selected'));
+                
+                // Add selected class to clicked button
+                this.classList.add('selected');
+                
+                // Show/hide custom amount input
+                if (this.dataset.amount === 'custom') {
+                    customAmountContainer.classList.add('visible');
+                } else {
+                    customAmountContainer.classList.remove('visible');
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('donationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic validation
+            const firstName = document.getElementById('first-name').value;
+            const lastName = document.getElementById('last-name').value;
+            const email = document.getElementById('email').value;
+            const paymentMethod = document.getElementById('payment-method').value;
+            
+            if (!firstName || !lastName || !email || !paymentMethod) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Get selected amount
+            let selectedAmount;
+            const selectedAmountElement = document.querySelector('.donation-amount.selected');
+            
+            if (selectedAmountElement) {
+                if (selectedAmountElement.dataset.amount === 'custom') {
+                    selectedAmount = document.getElementById('custom-amount').value;
+                    if (!selectedAmount) {
+                        alert('Please enter a custom amount.');
+                        return;
+                    }
+                } else {
+                    selectedAmount = selectedAmountElement.dataset.amount;
+                }
+            } else {
+                alert('Please select a donation amount.');
+                return;
+            }
+            
+            // In a real application, you would process the payment here
+            // This is just a demo, so we'll just show a success message
+            alert(`Thank you, ${firstName}! Your ${document.getElementById('monthly').checked ? 'monthly' : 'one-time'} donation of $${selectedAmount} has been processed successfully.`);
+            
+            // Reset the form
+            this.reset();
+            donationAmounts.forEach(btn => btn.classList.remove('selected'));
+            customAmountContainer.classList.remove('visible');
+        });
+    </script>
+</body>
+</html>

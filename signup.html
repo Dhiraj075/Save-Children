@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>a
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become a Volunteer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #444;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+        }
+        .checkbox-option input {
+            width: auto;
+            margin-right: 8px;
+        }
+        button {
+            background-color: #e41e26;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #c51920;
+        }
+        .availability-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .day-column {
+            text-align: center;
+        }
+        .time-slot {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .time-slot input {
+            width: auto;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Become a Volunteer</h1>
+    <p>Join our community of dedicated volunteers who give their time and talent to support children's programs locally and globally. Thank you for your interest in making a difference!</p>
+
+    <form id="volunteerForm">
+        <div class="form-group">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" required>
+        </div>
+
+        <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" id="location" placeholder="City, State/Province, Country" required>
+        </div>
+
+        <div class="form-group">
+            <label>Areas of Interest (select all that apply)</label>
+            <div class="checkbox-group">
+                <div class="checkbox-option">
+                    <input type="checkbox" id="education" name="interests" value="education">
+                    <label for="education">Education</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="healthcare" name="interests" value="healthcare">
+                    <label for="healthcare">Healthcare</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="nutrition" name="interests" value="nutrition">
+                    <label for="nutrition">Nutrition</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="water" name="interests" value="water">
+                    <label for="water">Clean Water</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="shelter" name="interests" value="shelter">
+                    <label for="shelter">Shelter</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="emergency" name="interests" value="emergency">
+                    <label for="emergency">Emergency Relief</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="fundraising" name="interests" value="fundraising">
+                    <label for="fundraising">Fundraising</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="advocacy" name="interests" value="advocacy">
+                    <label for="advocacy">Advocacy</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="skills">Special Skills or Qualifications</label>
+            <textarea id="skills" placeholder="Tell us about your skills, experience, or qualifications that might be beneficial"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Availability (select all that apply)</label>
+            <div class="availability-grid">
+                <div class="day-column">
+                    <strong>Weekday Mornings</strong>
+                    <div class="time-slot">
+                        <input type="checkbox" id="mon-am" name="availability" value="mon-am">
+                        <label for="mon-am">Monday</label>
+                    </div>
+                    <div class="time-slot">
+                        <input type="checkbox" id="tue-am" name="availability" value="tue-am">
+                        <label for="tue-am">Tuesday</label>
+                    </div>
+                    <div class="time-slot">
+                        <input type="checkbox" id="wed-am" name="availability" value="wed-am">
+                        <label for="wed-am">Wednesday</label>
+                    </div>
+                    <div class="time-slot">
+                        <input type="checkbox" id="thu-am" name="availability" value="thu-am">
+                        <label for="thu-am">Thursday</label>
+                    </div>
+                    <div class="time-slot">
+                        <input type="checkbox" id="fri-am" name="availability" value="fri-am">
+                        <label for="fri-am">Friday</label>
+                    </div>
+                </div>
+                <div class="day-column">
+                    <strong>Weekday Afternoons</strong>
+                    <div class="time-slot">
+                        <input type="checkbox" id="mon-pm" name="availability" value="mon-pm">
+                        <label for="mon-pm">Monday</label>
+                    </div>
+                    <div class="time-slot">
+                        <input type="checkbox" id="tue-pm" name="availability" value="tue-pm">
+                        <label for="tue-pm">Tuesday</label>
+                    </div>
+                    <div class="time-slot">
+                        <input type="checkbox" id="wed-pm" name="availability" value="wed-pm">
+                        <label for="wed-pm">Wednesday</label>
+                    </div>
+                    <div class="time-slot">
+                        <input type="checkbox" id="thu-pm" name="availability" value="thu-pm">
+                        <label for="thu-pm">Thursday</label>
+                    </div>
+                    <div class="time-slot">
+                        <input type="checkbox" id="fri-pm" name="availability" value="fri-pm">
+                        <label for="fri-pm">Friday</label>
+                    </div>
+                </div>
+                <div class="day-column">
+                    <strong>Weekend Mornings</strong>
+                    <div class="time-slot">
+                        <input type="checkbox" id="sat-am" name="availability" value="sat-am">
+                        <label for="sat-am">Saturday</label>
+                    </div>
+                    <div class="time-slot">
+                        <input type="checkbox" id="sun-am" name="availability" value="sun-am">
+                        <label for="sun-am">Sunday</label>
+                    </div>
+                </div>
+                <div class="day-column">
+                    <strong>Weekend Afternoons</strong>
+                    <div class="time-slot">
+                        <input type="checkbox" id="sat-pm" name="availability" value="sat-pm">
+                        <label for="sat-pm">Saturday</label>
+                    </div>
+                    <div class="time-slot">
+                        <input type="checkbox" id="sun-pm" name="availability" value="sun-pm">
+                        <label for="sun-pm">Sunday</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="commitment">Preferred Commitment</label>
+            <select id="commitment" required>
+                <option value="">Select commitment level</option>
+                <option value="one-time">One-time event</option>
+                <option value="occasional">Occasional (as needed)</option>
+                <option value="weekly">Weekly</option>
+                <option value="monthly">Monthly</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="reason">Why would you like to volunteer with us?</label>
+            <textarea id="reason" placeholder="Tell us your motivation for volunteering"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="hear-about">How did you hear about us?</label>
+            <select id="hear-about">
+                <option value="">Select an option</option>
+                <option value="social-media">Social Media</option>
+                <option value="website">Website</option>
+                <option value="friend">Friend/Family</option>
+                <option value="event">Event</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <button type="submit">Submit Application</button>
+    </form>
+
+    <script>
+        // Form submission
+        document.getElementById('volunteerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic validation
+            const firstName = document.getElementById('first-name').value;
+            const lastName = document.getElementById('last-name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const location = document.getElementById('location').value;
+            const commitment = document.getElementById('commitment').value;
+            
+            if (!firstName || !lastName || !email || !phone || !location || !commitment) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Check if at least one interest is selected
+            const interests = document.querySelectorAll('input[name="interests"]:checked');
+            if (interests.length === 0) {
+                alert('Please select at least one area of interest.');
+                return;
+            }
+            
+            // In a real application, you would process the form here
+            // This is just a demo, so we'll just show a success message
+            alert(`Thank you, ${firstName}! Your volunteer application has been submitted successfully. We will contact you soon!`);
+            
+            // Reset the form
+            this.reset();
+        });
+    </script>
+</body>
+</html>

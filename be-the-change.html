@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Be The Change - Save Children</title>
+    <meta name="description" content="Join our efforts to help children around the world" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <div class="min-h-screen flex flex-col">
+      <!-- Navbar -->
+      <nav class="bg-white py-4 shadow-sm">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+          <a href="/" class="text-2xl font-bold text-save-red">Save Children</a>
+          
+          <div class="hidden md:flex space-x-6">
+            <a href="about.html" class="hover:text-save-red transition-colors">About</a>
+            <a href="what-we-do.html" class="hover:text-save-red transition-colors">What We Do</a>
+            <a href="be-the-change.html" class="hover:text-save-red transition-colors">Be The Change</a>
+            <a href="daily-stories.html" class="hover:text-save-red transition-colors">Daily Stories</a>
+            <a href="contact.html" class="hover:text-save-red transition-colors">Contact</a>
+          </div>
+          
+          <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-gray-700">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-4 py-2 bg-white">
+          <div class="flex flex-col space-y-3">
+            <a href="about.html" class="hover:text-save-red transition-colors">About</a>
+            <a href="what-we-do.html" class="hover:text-save-red transition-colors">What We Do</a>
+            <a href="be-the-change.html" class="hover:text-save-red transition-colors">Be The Change</a>
+            <a href="daily-stories.html" class="hover:text-save-red transition-colors">Daily Stories</a>
+            <a href="contact.html" class="hover:text-save-red transition-colors">Contact</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <div class="flex-1 container mx-auto px-4 py-16">
+        <h1 class="text-3xl font-montserrat font-bold mb-6">Be The Change</h1>
+        <p class="text-gray-700 mb-6">
+          There are many ways you can help make a difference in the lives of children around the world.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-montserrat font-semibold mb-4">Make a Donation</h2>
+            <p class="text-gray-700 mb-4">
+              Your financial contribution helps us provide essential services to children in need.
+              Whether it's a one-time gift or a monthly commitment, every dollar makes a difference.
+            </p>
+            <!-- Link the "Donate Now" button to donate.html -->
+            <a href="donate.html" class="bg-save-red hover:bg-red-600 text-white px-4 py-2 rounded-md">Donate Now</a>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-montserrat font-semibold mb-4">Become a Volunteer</h2>
+            <p class="text-gray-700 mb-4">
+              Join our community of dedicated volunteers who give their time and talent to
+              support children's programs locally and globally.
+            </p>
+            <!-- Link the "Sign Up" button to signup.html -->
+            <a href="signup.html" class="bg-save-red hover:bg-red-600 text-white px-4 py-2 rounded-md">Sign Up</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div>
+              <h3 class="text-xl font-montserrat font-bold mb-4">Save Children</h3>
+              <p class="text-gray-300">
+                We believe every child deserves a future. Together we can ensure children stay safe, healthy, and keep learning.
+              </p>
+            </div>
+            
+            <div>
+              <h4 class="text-lg font-medium mb-4">Quick Links</h4>
+              <ul class="space-y-2">
+                <li><a href="about.html" class="hover:text-save-red transition-colors">About Us</a></li>
+                <li><a href="what-we-do.html" class="hover:text-save-red transition-colors">What We Do</a></li>
+                <li><a href="be-the-change.html" class="hover:text-save-red transition-colors">Be The Change</a></li>
+                <li><a href="daily-stories.html" class="hover:text-save-red transition-colors">Daily Stories</a></li>
+                <li><a href="contact.html" class="hover:text-save-red transition-colors">Contact Us</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 class="text-lg font-medium mb-4">Contact</h4>
+              <address class="not-italic text-gray-300 space-y-2">
+                <p>123 Hope Street</p>
+                <p>Charity City, Global 12345</p>
+                <p>Phone: +1 (555) 123-4567</p>
+                <p>Email: info@savechildren.org</p>
+              </address>
+            </div>
+            
+            <div>
+              <h4 class="text-lg font-medium mb-4">Connect With Us</h4>
+              <div class="flex space-x-4">
+                <a href="#" class="hover:text-save-red transition-colors">Facebook</a>
+                <a href="#" class="hover:text-save-red transition-colors">Twitter</a>
+                <a href="#" class="hover:text-save-red transition-colors">Instagram</a>
+              </div>
+              <div class="mt-6">
+                <form>
+                  <label for="email-signup" class="block mb-2">Subscribe to our newsletter</label>
+                  <div class="flex">
+                    <input type="email" id="email-signup" placeholder="Your email" class="px-3 py-2 text-gray-800 rounded-l-md w-full" />
+                    <button type="submit" class="bg-save-red hover:bg-red-600 px-4 py-2 rounded-r-md">
+                      Subscribe
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class="border-t border-gray-700 mt-8 pt-6 text-sm text-center text-gray-400">
+            <p>&copy; 2024 Save Children. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      // Mobile menu toggle
+      const menuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      menuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    </script>
+  </body>
+</html>
